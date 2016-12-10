@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+<body>
+<div id="gotop" class="img"></div>
+<p id="top_line"></p>
+<div id="header">
+	<p id="header_line"></p>
+    <div id="header_c">
+    	<div id="logo"><h1 class="logo"><a href="index.html">挺好玩動物</a></h1></div>
+    
+	<p id="msg_t">訊息快報</p>
+    <div id="msg_c">
+		<div id="ann_box" class="ann"><div class="ann"><span style="color:#d93a15">2015-11-20</span>　<a href="news_ii.html?nID=1" title="挺好吃食品坊 網站全新開站！">挺好玩動物坊 網站全新開站！</a></div></div>
+	</div>
+</div>
+<p id="msg_bg_a_line"></p>
+<script>
+function slideLine(box,stf,delay,speed,h)
+{
+  var slideBox = document.getElementById(box);
+  var delay = delay||1000,speed = speed||20,h = h||20;
+  var tid = null,pause = false;
+  var s = function(){tid=setInterval(slide, speed);}
+  var slide = function(){
+    if(pause) return;
+    slideBox.scrollTop += 1;
+    if(slideBox.scrollTop%h == 0){
+      clearInterval(tid);
+      slideBox.appendChild(slideBox.getElementsByTagName(stf)[0]);
+      slideBox.scrollTop = 0;
+      setTimeout(s, delay);
+    }
+  }
+  slideBox.onmouseover=function(){pause=true;}
+  slideBox.onmouseout=function(){pause=false;}
+  setTimeout(s, delay);
+}
+slideLine('ann_box','div',2000,25,30);
+</script>
+<div id="line_bg"><p id="line_f">動物介紹
+<div id="content">
+
+    <div id="pr_content">
+		<div id="pr_category">
+        	<img src="images/symbol/icon_01.gif" align="absmiddle" /> <b style="color:#663300;">挺好玩動物</b>
+        	<p id="pr_category_c">物品類別：<select class="category f15_15a" onchange="if($(this).val()!=''){location.href='products.html?cID='+$(this).val()}else{location.href='products.html'}">
+              <option value="">全部</option><option selected value="1">挺好玩動物</option>            </select></p>
+        </div>
+        <div id="pr_cc">
+        	<div id="pr_info">
+				<p id="pr_info_p"><i></i><img src="pp.jpg"width="400" height="300"/></p>
+                <div id="pr_info_c">
+                	<p id="pr_title">挺好玩動物</p>
+                    <ul>
+                        
+</body>
+</html>
